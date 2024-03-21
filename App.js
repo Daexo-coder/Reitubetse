@@ -1,36 +1,34 @@
-import React from 'react';
-import { ScrollView, View, Text, Image, StyleSheet } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View,Image } from 'react-native';
 
-const ProfileScreen = () => {
+export default function App() {
   return (
-    <ScrollView>
-      <View style={styles.container}>
-        <Image
-          style={styles.profileImage}
-          source={require('./profilepic.jpg')}
-        />
-        <Text style={styles.name}>Khalala Thootse</Text>
-        <Text style={styles.studentNumber}>Student Number: 901016406</Text>
-        <Text style={styles.semester}>Current Semester: 2</Text>
-        <Text style={styles.heading}>Semester Grades:</Text>
-        <View style={styles.gradeList}>
-          <Text style={styles.gradeItem}>Java 1: A</Text>
-          <Text style={styles.gradeItem}>Statistics: B+</Text>
-          <Text style={styles.gradeItem}>mobile programming: A-</Text>
-        </View>
+    <View style={styles.container}>
+    <Image  source={require('./pman.jpg')}
+    style={styles.profile}></Image>
+      <Text style={styles.name}>REITUMETSE MPOROANE</Text>
+      <Text  style={styles.id}>901016673</Text>
+      <Text  style={styles.sems}>SEMESTER:4</Text>
+      <View  style={styles.gradesCont}>
+      <Text  style={styles.gradesT}>Semester grades</Text>
+      <Text  style={styles.grade}>calculus:B</Text>
+      <Text  style={styles.grade}>Java:A</Text>
+      <Text  style={styles.grade}>C++:A</Text>
       </View>
-    </ScrollView>
+      <StatusBar style="auto" />
+     
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 20,
   },
-  profileImage: {
+  profile: {
     width: 150,
     height: 150,
     borderRadius: 75,
@@ -41,34 +39,24 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 10,
   },
-  studentNumber: {
+   id: {
     fontSize: 16,
-    marginBottom: 10,
+    marginBottom: 5,
   },
-  semester: {
+  semes: {
     fontSize: 16,
-    marginBottom: 10,
+    marginBottom: 20,
   },
-  heading: {
+  gradesT: {
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 10,
-    marginTop: 20,
   },
-  gradeList: {
-    alignItems:'center',
+  gradeCont: {
     alignSelf: 'stretch',
-    justifyContent:'center',
   },
-  gradeItem: {
+  grade: {
     fontSize: 16,
     marginBottom: 5,
-    justifyContent:'center',
-    alignItems:'center',
   },
 });
-
-export default ProfileScreen;
-
-
-
